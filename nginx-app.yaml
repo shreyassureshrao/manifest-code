@@ -8,10 +8,12 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
-  project: default
+  project: project1
   source:
-    repoURL: 'https://github.com/yourusername/your-repo.git'  # Replace with your actual Git repo URL
-    path: 'nginx-deployment.yaml'  # Replace with the actual path in your repository
+    # Replace with your actual Git repo URL
+    repoURL: 'https://github.com/shreyassureshrao/manifest-code.git'  
+    # Replace with the actual path in your repository
+    path: 'nginx-deployment.yaml'  
     targetRevision: HEAD
   syncPolicy:
     automated:
