@@ -1,0 +1,19 @@
+# File: nginx-app.yaml
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-app
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  project: default
+  source:
+    repoURL: 'https://github.com/yourusername/your-repo.git'  # Replace with your actual Git repo URL
+    path: 'nginx-deployment.yaml'  # Replace with the actual path in your repository
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
